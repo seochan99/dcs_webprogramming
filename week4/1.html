@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p>다음 이동 버튼을 클릭하여 이동할 웹 사이트 주소를 입력하세요.</p>
+        <button onclick="navigateToWebsite()">이동</button>
+
+        <script>
+            function navigateToWebsite() {
+                const defaultUrl = "http://"; // 기본값으로 제공할 URL
+                const inputUrl = prompt(
+                    "이동할 웹 사이트 주소를 입력하세요",
+                    defaultUrl
+                );
+
+                // 사용자가 취소를 누르거나 빈 문자열을 입력한 경우 기본값으로 이동하지 않음
+                if (inputUrl !== null && inputUrl !== "") {
+                    window.location.href = inputUrl;
+                }
+            }
+        </script>
+    </body>
+</html>
