@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Image Toggle with Layer</title>
+        <style>
+            /* Layer styles */
+            #imageLayer {
+                position: absolute;
+                left: 50px;
+                top: 50px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <label>
+            <input
+                type="radio"
+                name="imageToggle"
+                value="hide"
+                onclick="toggleImage(false)"
+                checked
+            />
+            가리기
+        </label>
+        <label>
+            <input
+                type="radio"
+                name="imageToggle"
+                value="show"
+                onclick="toggleImage(true)"
+            />
+            보이기
+        </label>
+
+        <div id="imageLayer">
+            <img src="./3.jpg" alt="Image to toggle" />
+        </div>
+
+        <script>
+            function toggleImage(show) {
+                const imageLayer = document.getElementById("imageLayer");
+
+                if (show) {
+                    imageLayer.style.display = "block";
+                } else {
+                    imageLayer.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+</html>

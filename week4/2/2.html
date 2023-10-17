@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="div1" onclick="reverseColor()">여긴 DIV1영역</div>
+        <div class="div2" onclick="addText()">여긴 DIV2영역</div>
+        <div class="div3"></div>
+        <script>
+            // image div  생성
+            const imageDiv = document.querySelector(".div3");
+
+            // 색 반전
+            function reverseColor() {
+                const div = document.querySelector(".div1");
+                const color = div.style.backgroundColor;
+
+                if (color === "black") {
+                    div.style.backgroundColor = "white";
+                    div.style.color = "black";
+                } else {
+                    div.style.backgroundColor = "black";
+                    div.style.color = "white";
+                }
+            }
+
+            // 글자 div2의 영역에 텍스트 추가하기 함수
+            function addText() {
+                const div = document.querySelector(".div2");
+                const existingText = div.innerHTML;
+                const newText = " div2의 영역 이죠";
+
+                // 기존 텍스트 뒤에 새로운 텍스트를 이어붙임
+                div.innerHTML = existingText + newText;
+            }
+
+            // 이미지 요소 생성
+            const img = document.createElement("img");
+            img.setAttribute("src", "./back.JPG");
+            img.setAttribute("alt", "이미지");
+
+            // 이미지를 imageDiv 추가
+            imageDiv.appendChild(img);
+        </script>
+    </body>
+</html>

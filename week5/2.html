@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>5주차 2번</title>
+        <style>
+            .blue-box {
+                display: none;
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="blue-box"></div>
+        <button id="start">시작</button>
+        <button id="stop">정지</button>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                const blueBox = $(".blue-box");
+                const startButton = $("#start");
+                const stopButton = $("#stop");
+
+                // 시작 버튼 클릭 시 애니메이션 효과
+                startButton.click(function () {
+                    blueBox
+                        .show()
+                        .css({ opacity: 0 }) // 초기 상태를 투명도 0으로 설정
+                        .animate(
+                            { opacity: 1, width: "200px", height: "200px" },
+                            1000
+                        ); // fade in 및 크기 변환 애니메이션
+                });
+
+                // 정지 버튼 클릭 시 그림 숨김
+                stopButton.click(function () {
+                    blueBox.animate(
+                        { opacity: 0, width: "100px", height: "100px" },
+                        1000,
+                        function () {
+                            blueBox.hide();
+                        }
+                    ); // fade out 및 크기 변환 애니메이션
+                });
+            });
+        </script>
+    </body>
+</html>

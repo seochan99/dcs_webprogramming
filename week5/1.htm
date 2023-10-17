@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>5주차 1번</title>
+        <style>
+            .blue-box {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+                transition: all 0.3s ease;
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="blue-box"></div>
+        <button id="enlargeBtn">상자 확대</button>
+        <button id="shrinkBtn">상자 축소</button>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                const blueBox = $(".blue-box");
+
+                $("#enlargeBtn").click(function () {
+                    const currentWidth = blueBox.width();
+                    blueBox.width(currentWidth * 2);
+                });
+
+                $("#shrinkBtn").click(function () {
+                    const currentWidth = blueBox.width();
+                    blueBox.width(currentWidth * 0.5);
+                });
+            });
+        </script>
+    </body>
+</html>
