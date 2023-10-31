@@ -26,10 +26,7 @@ public class BeerSelect extends HttpServlet {
 		out.println("BEER SELECTION ADVICE - mvc2<br>");
 		String c = request.getParameter("color");
 		out.println("<br>Got Beer Color : " + c +"<br><br>");
-		
-//			RequestDispatcher dispatcher = 
-//					request.getRequestDispatcher("BeerTryName");
-//			dispatcher.forward(request,response);
+	
 		
 		if(c.equals("amber"))
 		{

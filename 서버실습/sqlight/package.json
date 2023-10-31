@@ -1,0 +1,16 @@
+{
+    "name": "webprogramming",
+    "version": "1.0.0",
+    "description": "orm",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "sequelize": "^6.33.0",
+        "sqlite3": "^5.1.6"
+    }
+}
